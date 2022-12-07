@@ -35,7 +35,7 @@ app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
-app.mountpath = './client';
+app.mountpath = './client/index.html';
 
 app.use('/api/schedule', scheduleController);
 app.use('/api/sessions', sessionsController);
