@@ -42,7 +42,6 @@ router.get('/', (req, res) => {
             never: [],
         };
         for (const row of schedule) {
-            console.log(row);
             scheduleHandler(
                 row.name,
                 row.plant_nickname,

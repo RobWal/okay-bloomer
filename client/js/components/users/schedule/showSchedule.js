@@ -3,7 +3,6 @@ function renderSchedule() {
     <p class="error-location"></p>`;
     axios.get(`/api/schedule/`).then((response) => {
         const results = response.data;
-        console.log(results);
         if (
             results.day.length == 0 &&
             results.week.length == 0 &&

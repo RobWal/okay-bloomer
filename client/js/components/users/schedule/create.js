@@ -17,11 +17,8 @@ function addPlantToSchedule(plant) {
             `;
 
             page.appendChild(plantAddedNotification);
-            console.log('Success');
         })
         .catch((error) => {
             displayError(error.response.data.message);
         });
-
-    console.log(body);
 }
