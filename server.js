@@ -36,6 +36,7 @@ const path = require('path');
 
 app.get('/', function(req, res) {
     res.sendFile(path.join('/client', '/index.html'));
+    console.log(res);
 });
 
 
