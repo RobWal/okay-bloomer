@@ -40,7 +40,7 @@ app.use(express.json());
 // NEW CODE BELOW
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '/index.html'));
+    res.sendFile(path.join('./client/', '/index.html'));
   });
 
 
