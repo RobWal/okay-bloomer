@@ -39,8 +39,9 @@ app.use(express.json());
 
 // NEW CODE BELOW
 
-app.use('/', function(req, res) {
-    res.sendFile(path.join('./client', '/index.html'));
+app.use((req, res, next) => {
+    // res.sendFile(path.join('./client', '/index.html'));
+    console.log(`Time: ${Date.now()}`);
 });
 
 
