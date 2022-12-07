@@ -39,9 +39,9 @@ app.use(express.json());
 
 // NEW CODE BELOW
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join('./client/', '/index.html'));
-  });
+app.use('/', function(req, res) {
+    res.sendFile(path.join('./client', '/index.html'));
+});
 
 
 // app.mountpath = './client';
