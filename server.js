@@ -61,7 +61,8 @@ app.listen(port, () => {
 
 app.get("/",(req,res)=>
 {
-res.send("Welcome My Project");
+    console.log(`We're firing at least`);
+    res.send("Welcome My Project");
 });
 
 // console.log(app);
