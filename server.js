@@ -29,26 +29,20 @@ app.use(
         saveUninitialized: false,
     })
 );
+// THIS IS NEW
+app.set('view engine', 'html');
 
-app.use(express.static('client'));
+// BELOW IS MODIFIED, THIS IS OLD --> app.use(express.static('client'));
+app.use(express.static(path.join('./' ,'client')));
 app.use(logger);
 app.use(express.json());
 
-console.log(express.static('client'));
-// app.use('/api/schedule', scheduleController);
-// app.use('/api/sessions', sessionsController);
-// app.use('/api/users', usersController);
-// app.use('/api/plants', plantsController);
-// app.use('/api/favourites', favouritesController);
-// app.use(errorHandler);
-
-
-console.log(scheduleController);
-console.log(sessionsController);
-console.log(usersController);
-console.log(plantsController);
-console.log(favouritesController);
-console.log(logger);
+app.use('/api/schedule', scheduleController);
+app.use('/api/sessions', sessionsController);
+app.use('/api/users', usersController);
+app.use('/api/plants', plantsController);
+app.use('/api/favourites', favouritesController);
+app.use(errorHandler);
 
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
