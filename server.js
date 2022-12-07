@@ -34,12 +34,13 @@ app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
-app.use('/api/schedule', scheduleController);
-app.use('/api/sessions', sessionsController);
-app.use('/api/users', usersController);
-app.use('/api/plants', plantsController);
-app.use('/api/favourites', favouritesController);
-app.use(errorHandler);
+console.log(app.use(express.static('client')));
+// app.use('/api/schedule', scheduleController);
+// app.use('/api/sessions', sessionsController);
+// app.use('/api/users', usersController);
+// app.use('/api/plants', plantsController);
+// app.use('/api/favourites', favouritesController);
+// app.use(errorHandler);
 
 
 console.log(scheduleController);
