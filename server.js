@@ -3,7 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const express = require('express');
-const path = require('path');
+// const path = require('path');
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
 const db = require('./database/db');
@@ -32,7 +32,7 @@ app.use(
     })
 );
 
-// app.use(express.static('client'));
+app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
@@ -59,10 +59,4 @@ app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
 
-app.get("/",(req,res)=>
-{
-    console.log(`We're firing at least`);
-    res.send("Welcome My Project");
-});
-
-// console.log(app);
+console.log(`Time: ${Date.now()}`);
