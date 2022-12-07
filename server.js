@@ -32,8 +32,7 @@ app.use(
 // THIS IS NEW
 app.set('view engine', 'html');
 
-// BELOW IS MODIFIED, THIS IS OLD --> app.use(express.static('client'));
-app.use(express.static(path.join('./' ,'client')));
+app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
