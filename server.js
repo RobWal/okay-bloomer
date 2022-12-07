@@ -42,7 +42,6 @@ app.use('/api/plants', plantsController);
 app.use('/api/favourites', favouritesController);
 
 app.use(errorHandler);
-
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
