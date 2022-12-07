@@ -34,6 +34,7 @@ app.use(
 );
 
 app.use(express.static('client'));
+console.log(express.static('cliet'));
 app.use(logger);
 app.use(express.json());
 
