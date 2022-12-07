@@ -55,8 +55,11 @@ app.use('/api/plants', plantsController);
 app.use('/api/favourites', favouritesController);
 
 app.use(errorHandler);
+
+app.get("/", (req, res) => res.type('html').send(`./client`));
+
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
 
-console.log(`Time: ${Date.now()}`);
+// console.log(`Time: ${Date.now()}`);
