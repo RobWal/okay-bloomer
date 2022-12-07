@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const express = require('express');
+const path = require('path');
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
 const db = require('./database/db');
@@ -31,11 +32,19 @@ app.use(
     })
 );
 
-app.use(express.static('client'));
+// app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
-app.mountpath = './client/index.html';
+
+// NEW CODE BELOW
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname, '/index.html'));
+  });
+
+
+// app.mountpath = './client';
 
 app.use('/api/schedule', scheduleController);
 app.use('/api/sessions', sessionsController);
@@ -48,4 +57,4 @@ app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
 
-console.log(app);
+// console.log(app);
