@@ -35,12 +35,10 @@ app.use(
 const path = require('path');
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join('/client', '/index.html'));
     console.log(`We're #1`);
     console.log(res);
+    res.sendFile(path.join('/client', '/index.html'));
 });
-console.log(`We're #2`);
-console.log(res);
 
 // app.use(express.static('client'));
 app.use(logger);
