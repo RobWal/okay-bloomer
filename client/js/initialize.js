@@ -1,8 +1,6 @@
 renderAppWithoutSession();
 renderAppWithSession();
 
-console.log(`Initializing`);
-
 function renderAppWithoutSession() {
     renderHeader();
     renderSearch();

@@ -3,7 +3,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const express = require('express');
-// const path = require('path');
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
 const db = require('./database/db');
@@ -36,18 +35,6 @@ app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
-
-// NEW CODE BELOW
-
-// app.use((req, res, next) => {
-//     // res.sendFile(path.join('./client', '/index.html'));
-//     console.log(`Time: ${Date.now()}`);
-//     next();
-// });
-
-
-// app.mountpath = './client';
-
 app.use('/api/schedule', scheduleController);
 app.use('/api/sessions', sessionsController);
 app.use('/api/users', usersController);
@@ -55,11 +42,6 @@ app.use('/api/plants', plantsController);
 app.use('/api/favourites', favouritesController);
 
 app.use(errorHandler);
-
-app.get("/", (req, res) => res.type('html').send(`./client`));
-
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
-
-// console.log(`Time: ${Date.now()}`);

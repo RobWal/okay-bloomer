@@ -5,7 +5,6 @@ function getSession() {
             return response.data;
         })
         .catch((error) => {
-            console.log('Not logged in');
             return error;
         });
 }
