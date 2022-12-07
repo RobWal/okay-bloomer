@@ -39,11 +39,11 @@ app.use(express.json());
 
 // NEW CODE BELOW
 
-app.use((req, res, next) => {
-    // res.sendFile(path.join('./client', '/index.html'));
-    console.log(`Time: ${Date.now()}`);
-    next();
-});
+// app.use((req, res, next) => {
+//     // res.sendFile(path.join('./client', '/index.html'));
+//     console.log(`Time: ${Date.now()}`);
+//     next();
+// });
 
 
 // app.mountpath = './client';
@@ -57,6 +57,11 @@ app.use('/api/favourites', favouritesController);
 app.use(errorHandler);
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
+});
+
+app.get("/",(req,res)=>
+{
+res.send("Welcome My Project");
 });
 
 // console.log(app);
