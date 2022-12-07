@@ -2,8 +2,6 @@ if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
 
-console.log(process.env.NODE_ENV === 'production');
-
 const express = require('express');
 const expressSession = require('express-session');
 const pgSession = require('connect-pg-simple')(expressSession);
@@ -34,7 +32,14 @@ app.use(
 // THIS IS NEW
 // app.set('view engine', 'html');
 
-app.use(express.static('client'));
+const path = require('path');
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join('/client', '/index.html'));
+});
+
+
+// app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
