@@ -34,7 +34,7 @@ app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
 
-console.log(app.use(express.static('client')));
+console.log(express.static('client'));
 // app.use('/api/schedule', scheduleController);
 // app.use('/api/sessions', sessionsController);
 // app.use('/api/users', usersController);
