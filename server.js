@@ -1,5 +1,3 @@
-console.log('asdasdsa')
-
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config();
 }
@@ -14,7 +12,6 @@ const sessionsController = require('./controllers/sessions');
 const usersController = require('./controllers/users');
 const plantsController = require('./controllers/plants');
 const favouritesController = require('./controllers/favourites');
-
 const errorHandler = require('./middleware/error_handler');
 const logger = require('./middleware/logger');
 
@@ -34,7 +31,6 @@ app.use(
 );
 
 app.use(express.static('client'));
-console.log(express.static('cliet'));
 app.use(logger);
 app.use(express.json());
 
@@ -43,8 +39,16 @@ app.use('/api/sessions', sessionsController);
 app.use('/api/users', usersController);
 app.use('/api/plants', plantsController);
 app.use('/api/favourites', favouritesController);
-
 app.use(errorHandler);
+
+
+console.log(scheduleController);
+console.log(sessionsController);
+console.log(usersController);
+console.log(plantsController);
+console.log(favouritesController);
+console.log(logger);
+
 app.listen(port, () => {
     console.log(`server listening on port: ${port}`);
 });
