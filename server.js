@@ -29,22 +29,10 @@ app.use(
         saveUninitialized: false,
     })
 );
-// THIS IS NEW
-// app.set('view engine', 'html');
 
-const path = require('path');
-
-app.get('/', function(req, res) {
-    console.log(`We're #1`);
-    console.log(res);
-    res.sendFile(path.join('/client', '/index.html'));
-});
-
-// app.use(express.static('client'));
+app.use(express.static('client'));
 app.use(logger);
 app.use(express.json());
-
-
 
 app.use('/api/schedule', scheduleController);
 app.use('/api/sessions', sessionsController);
