@@ -42,6 +42,7 @@ app.use(express.json());
 app.use((req, res, next) => {
     // res.sendFile(path.join('./client', '/index.html'));
     console.log(`Time: ${Date.now()}`);
+    next();
 });
 
 
